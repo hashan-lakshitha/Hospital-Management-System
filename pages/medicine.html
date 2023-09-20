@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/medicine.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Medicine</title>
 </head>
 <body>
-$END$
+
+<header>
+    <div class="main-text">
+        <h1>Hospital Management System</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="../pages/patient-registration.html">Patients</a></li>
+            <li><a href="../pages/doctor-registration.html">Doctors</a></li>
+            <li><a href="../pages/appointments.html">Appointments</a></li>
+            <li><a href="#">Billing</a></li>
+            <li><a href="../pages/medicine.html">Medicine</a></li>
+            <li><a href="#">Reports</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<main>
+
+
+    <section id="medicine">
+
+        <h2>Medicine Inventory</h2>
+        <div class="medicine-list">
+            <h3>List of Medicines</h3>
+            <ul id="medicine-list">
+
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <h3>Manage Medicine Inventory</h3>
+            <form id="medicine-management-form">
+                <label for="medicine-name">Medicine Name:</label>
+                <input type="text" id="medicine-name" required>
+
+                <label for="medicine-quantity">Quantity:</label>
+                <input type="number" id="medicine-quantity" required>
+
+                <label for="medicine-price">Price:</label>
+                <input type="text" id="medicine-price" required>
+
+                <label for="medicine-expiration">Expiration Date:</label>
+                <input type="date" id="medicine-expiration" required>
+
+                <button type="submit">Add Medicine</button>
+            </form>
+        </div>
+
+
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>&copy; 2023 Hospital Management System</p>
+</footer>
+
+
 </body>
 </html>

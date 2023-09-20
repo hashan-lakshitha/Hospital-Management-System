@@ -8,28 +8,40 @@
     <title>register</title>
 </head>
 <body>
-<div class="main-outer">
-    <div class="main-inner">
-        <h3>Register</h3>
-        <br>
-        <div class="form-group"><input type="email"
-                                       placeholder="email"
-                                       class="form-control"
-                                       id="email"></div>
-        <br>
-        <div class="form-group"><input type="password"
-                                       placeholder="password"
-                                       class="form-control"
-                                       id="password"></div>
-        <br>
-        <div class="form-group">
-            <button class="btn btn-primary">Register</button>
-            <br>
-            <br>
-            <button class="btn btn-dark">Already have an Account</button>
+    <div class="container main-outer   ">
+        <div class="row main-inner ">
+            <div class="col-sm-12 col-lg-6 col-md-6 inner-left" >
+                <img src="https://images.all-free-download.com/images/graphicwebp/internet_security_background_businessman_laptop_security_elements_6838351.webp" alt="login" width="100%">
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-6 inner-right text-center">
+    
+                <h3>Register</h3>
+    
+              <div class="row justify-content-center">
+                <div class="form-group gy-3 col-8 "><input type="email"
+                                               placeholder="email"
+                                               class="form-control"
+                                               id="email"></div>
+               
+                <div class="form-group gy-3 col-8 "><input type="password"
+                                               placeholder="password"
+                                               class="form-control"
+                                               id="password"></div>
+              
+                <div class="form-group gy-5">
+                    <button class="col-7 gy-5 btn btn-primary">Register</button>
+                    <button class="col-7 gy-5 btn btn-dark" onclick="alreadyHaveAnAccount()" >Already Have An Account</button>
+                </div>
+              </div>
+                
+    
+            </div>
+    
+    
+    
         </div>
-
     </div>
-</div>
+
+    <script src="../script/register.js"></script>
 </body>
 </html>
