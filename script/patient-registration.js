@@ -20,22 +20,27 @@ const registorPatient = () => {
 }
 
 const loadPatient = () => {
+    $('#table-body').empty();
     const firestore = firebase.firestore();
     firestore.collection('patients')
         .get().then((result) => {
-            result.forEach((record) => {
-                const data = record.data();
+            result.forEach((records) => {
+                const data = records.data();
                 console.log(data);
+                // console.log(data.id);
                 const row = `
     <tr>
-        <td><input type="checkbox"></td>
+                    
         <td scope="col">${data.name}</td>
         <td scope="col">${data.age}</td>
         <td scope="col">${data.gender}</td>
         <td scope="col">${data.contact}</td>
         <td scope="col">${data.address}</td>
         <td scope="col">${data.medical}</td>
-        
+        <td scope="col">
+            <button class="ui red button" onclick="deleteData('${records.id})" >Delete</button>
+            <button class="ui green button" onclick="updateData('${records.id}')" >UpdateRecord</button>
+        </td> 
     </tr>
 `;
                 $('#table-body').append(row);
@@ -46,8 +51,54 @@ const loadPatient = () => {
 
 
 
+patientId = undefined;
+const updateData = (id) => {
+    patientId=id;
+    const firestore = firebase.firestore();
+    firestore.collection('patients')
+        .doc(patientId)
+        .get().then((response) => {
+            if (response.exists) {
+                const data = response.data();
+                     $('#name').val(data.name);
+                    $('#age').val(data.age);
+                    $('#gender').val(data.gender);
+                    $('#address').val(data.address);
+                    $('#contact').val(data.contact);
+                    $('#medical').val(data.medical)
+            }
+        })
 
-/* <td scope="col">
-            <button class="ui red button">Delete</button>
-            <button class="ui green button">Update</button>
-        </td> */
+}
+
+const updateRecord = () => {
+    if (patientId) {
+        const firestore = firebase.firestore();
+        firestore
+            .collection('patients')
+            .doc(patientId)
+            .update({
+                name: $('#name').val(),
+                age: $('#age').val(),
+                gender: $('#gender').val(),
+                contact: $('#address').val(),
+                address: $('#contact').val(),
+                medical: $('#medical').val()
+            }).then(() => {
+                patientId = undefined;
+                loadPatient();
+            })
+    }
+}
+
+
+const deleteData = (id) => {
+
+}
+
+
+
+
+
+
+// <td><input type="checkbox"></td>
