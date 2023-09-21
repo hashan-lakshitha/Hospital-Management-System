@@ -11,7 +11,7 @@
     <title>Doctor registration</title>
 </head>
 
-<body>
+<body onload="loadDoctor()">
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -59,7 +59,7 @@
         <h1 class="p-2">Doctor registration and management</h1>
         <hr>
         <div class="row">
-            <div class="col-12 col-lg-6 ">
+            <div class="col-12 col-lg-4 ">
                 <div class="form-inner p-2">
                     <h3>Doctor registration</h3>
 
@@ -67,7 +67,7 @@
                     <form class="ui fluid form">
                         <div class="field">
                             <p class="text-start ms-2 mb-0">Name</p>
-                            <input type="text" placeholder="Name">
+                            <input type="text" id="name" placeholder="Name">
                         </div>
 
 
@@ -75,12 +75,42 @@
                         <div class="row position-relative">
                             <div class="field col-6">
                                 <p class="text-start ms-2 mb-0">Specialization</p>
-                                <input type="text" placeholder="Specialization">
+                                <select type="text" id="specialization" placeholder="Specialization">
+                                    <option value="Cardiologist">Cardiologist</option>
+                                    <option value="Dermatologist">Dermatologist</option>
+                                    <option value="Endocrinologist">Endocrinologist</option>
+                                    <option value="Gastroenterologist">Gastroenterologist</option>
+                                    <option value="Hematologist">Hematologist</option>
+                                    <option value="Nephrologist">Nephrologist</option>
+                                    <option value="Neurologist">Neurologist</option>
+                                    <option value="Obstetrician-Gynecologist">Obstetrician-Gynecologist (OB-GYN)</option>
+                                    <option value="Oncologist">Oncologist</option>
+                                    <option value="Ophthalmologist">Ophthalmologist</option>
+                                    <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
+                                    <option value="Otolaryngologist">Otolaryngologist (ENT Specialist)</option>
+                                    <option value="Pediatrician">Pediatrician</option>
+                                    <option value="Psychiatrist">Psychiatrist</option>
+                                    <option value="Pulmonologist">Pulmonologist</option>
+                                    <option value="Rheumatologist">Rheumatologist</option>
+                                    <option value="Urologist">Urologist</option>
+                                    <option value="Anesthesiologist">Anesthesiologist</option>
+                                    <option value="Emergency Medicine Physician">Emergency Medicine Physician</option>
+                                    <option value="Family Medicine Physician">Family Medicine Physician</option>
+                                    <option value="Geriatrician">Geriatrician</option>
+                                    <option value="Infectious Disease Specialist">Infectious Disease Specialist</option>
+                                    <option value="Physical Medicine and Rehabilitation Physician">Physical Medicine and Rehabilitation (PM&R) Physician</option>
+                                    <option value="Allergist/Immunologist">Allergist/Immunologist</option>
+                                    <option value="Pathologist">Pathologist</option>
+                                    <option value="Radiologist">Radiologist</option>
+                                    <option value="Nuclear Medicine Physician">Nuclear Medicine Physician</option>
+                                    <option value="Other">Other</option>
+                                </select>
+
                             </div>
 
                             <div class="field col-6">
                                 <p class="text-start ms-2 mb-0">Gender</p>
-                                <select type="text" placeholder="Gender">
+                                <select type="text" id="gender" placeholder="Gender">
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                     <option value="other">Other</option>
@@ -90,16 +120,22 @@
                         </div>
                         <div class="field ">
                             <p class="text-start ms-2 mb-0">Availability </p>
-                            <input type="text" placeholder="Address">
+                            <select type="text" id="availability" placeholder="Availability">
+                                <option value="text"></option>
+                                <option value="yes">yes</option>
+                                <option value="No">No</option>
+
+                            </select>
+
                         </div>
                         <div class="field ">
                             <p class="text-start ms-2 mb-0">Contact </p>
-                            <input type="text" placeholder="Contact">
+                            <input type="number" id="contact" placeholder="Contact">
                         </div>
                 
 
                     </form>
-                    <button class="ui button primary my-4 col-4">Register</button>
+                    <button class="ui button primary my-4 col-4" onclick="registorDoctor()">Register</button>
 
                 </div>
             </div>
@@ -108,11 +144,23 @@
             <div class="col-12 col-lg-6">
                 <div class="table-inner p-2 text-center">
                     <h3>Doctor List </h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ratione maiores, 
-                        architecto iste repudiandae est, similique sed eligendi aperiam rerum at? 
-                        Labore est non obcaecati exercitationem minus expedita similique earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex officia beatae, necessitatibus accusantium nostrum laudantium magni corporis pariatur, quisquam consequuntur a. Perferendis, autem repellendus eos doloribus quo quaerat dolorem assumenda,
-                        sapiente exercitationem unde vero? Architecto deleniti eveniet ullam dolor quasi! </p>
-
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Specialization</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Availability</th>
+                                <th scope="col">Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider" id="table-body">
+    
+                        </tbody>
+                        
+                    </table>
+                    <button class="ui red button">Delete</button>
+                    <button class="ui green button">Update</button>
 
 
                 </div>
@@ -129,12 +177,35 @@
     </footer>
 
 
+
+
+
+
+
+    <!-- ==========FB=========== -->
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-auth.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-firestore.min.js"></script>
+
+    <script src="../script/firebaseConfig.js"></script>
+    <!-- ==========FB=========== -->
+    <!-- ==========jQ=========== -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- ==========jQ=========== -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="../Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script src="../script/doctorRegistration.js"></script>
 
 </body>
 

@@ -28,16 +28,14 @@ const loadPatient = () => {
                 console.log(data);
                 const row = `
     <tr>
-        <td>${data.name}</td>
-        <td>${data.age}</td>
-        <td>${data.gender}</td>
-        <td>${data.contact}</td>
-        <td>${data.address}</td>
-        <td>${data.medical}</td>
-        <td>
-            <button class="ui red button">Delete</button>
-            <button class="ui green button">Update</button>
-        </td>
+        <td><input type="checkbox"></td>
+        <td scope="col">${data.name}</td>
+        <td scope="col">${data.age}</td>
+        <td scope="col">${data.gender}</td>
+        <td scope="col">${data.contact}</td>
+        <td scope="col">${data.address}</td>
+        <td scope="col">${data.medical}</td>
+        
     </tr>
 `;
                 $('#table-body').append(row);
@@ -45,3 +43,11 @@ const loadPatient = () => {
             })
         })
 }
+
+
+
+
+/* <td scope="col">
+            <button class="ui red button">Delete</button>
+            <button class="ui green button">Update</button>
+        </td> */
