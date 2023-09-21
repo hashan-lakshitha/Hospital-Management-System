@@ -1,88 +1,65 @@
-* {
-    margin: 0;
-    padding: 0;
+.main-inner{
+    width: 100%;
+    height: 150px;
+    /* background-image: url("https://i.pinimg.com/originals/4b/22/93/4b229396885b90ea126258e5d19370ec.gif"); */
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: -170px; */
+
+}
+.row{
+    padding-top: 6%;
+    display: flex;
+    justify-content: center;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+.row-inner{
+    height: 400px;
+
 }
-.navbar{
-    background: #007BFF;
+.col-12.col-lg-6.row-inner.left{
+    height: 490px;
+    background-image: url(../img/Hospital1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
 }
-.navbar-nav{
+.right{
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.navbar-nav .nav-item .nav-link{
-    color: white;
-    transition: 2s;
-
-}
-.navbar-nav .nav-item .nav-link:hover{
-    color: black;
-}
-.main-inner {
-    width: 100%;
-    height: 62vh;
-
+.right h2{
+    font-size: 50px;
+    font-weight: 100px;
 }
 
-.main-inner .inner-text {
-    text-align: center;
-    margin: 50px;
-    text-transform: uppercase;
-    font-size: 30px;
+.col-12.text{
 
+    text-align: left;
+    padding-top: 40px;
+}
+.col-12.img{
+    height:400px ;
+    background-image: url(../img/Medical2-01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.overview {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-/*0774441456*/
-.card {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: 200px;
-    margin-right: 10px;
-    background-color: #5CD2E6;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
-}
-
-.card h3 {
-    color: #007BFF;
-}
-
-.card p {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.footer {
-    width: 100%;
-    height: 100px;
-    background: #007BFF;
-    display: inline-flex;
-    justify-content: center;
-}
-
-.footer p {
-    margin-top: 40px;
-}
-
-@media only screen and (max-width: 425px) {
-
-    .main-inner {
-        width: 100%;
-        height: 70vh;
+@media only screen and (max-width: 1200px){
+    .col-12.col-lg-6.row-inner.left{
+        height: 600px;
     }
-    .card {
-        height: 100px;
+}
+@media only screen and (max-width: 768px){
+    .main-inner{
+        height: auto;
+    }
+}
+@media only screen and (max-width: 576px){
+    .col-12.col-lg-6.row-inner.left{
+        height: 400px;
     }
 }

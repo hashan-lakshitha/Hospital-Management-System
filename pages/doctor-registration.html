@@ -1,78 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/doctorRegistration.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/patientRegistration.css">
+    <link rel="stylesheet" type="text/css" href="../Semantic-UI-CSS-master/semantic.min.css">
     <title>Doctor registration</title>
 </head>
+
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="container collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="#">Hospital Management System</a>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../pages/dashboard.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="../pages/patient-registration.html">Patients</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="../pages/doctor-registration.html">Doctors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="../pages/appointments.html">Appointments</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Billing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../pages/medicine.html">Medicine</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../pages/login.html">
+                                <butten type="button" class="btn btn-outline-danger">Sing in</butten>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<header>
-    <div class="main-text">
-        <h1>Hospital Management System</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="dashboard.html">Home</a></li>
-            <li><a href="../pages/patient-registration.html">Patients</a></li>
-            <li><a href="../pages/doctor-registration.html">Doctors</a></li>
-            <li><a href="../pages/appointments.html">Appointments</a></li>
-            <li><a href="#">Billing</a></li>
-            <li><a href="../pages/medicine.html">Medicine</a></li>
-            <li><a href="#">Reports</a></li>
-        </ul>
-    </nav>
-</header>
+    <div class="container text-center">
+        <h1 class="p-2">Doctor registration and management</h1>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-lg-6 ">
+                <div class="form-inner p-2">
+                    <h3>Doctor registration</h3>
 
-<main>
-    <section id="doctors">
 
-        <h2>Doctors Management</h2>
+                    <form class="ui fluid form">
+                        <div class="field">
+                            <p class="text-start ms-2 mb-0">Name</p>
+                            <input type="text" placeholder="Name">
+                        </div>
 
-        <div class="doctors-list">
-            <h3> List of Doctors</h3>
-            <ul id="patient-list">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Specialization</th>
-                <th>Contact</th>
-                <th>Availability</th>
-                <th>Action</th>
-            </tr>
-            </ul>
+
+
+                        <div class="row position-relative">
+                            <div class="field col-6">
+                                <p class="text-start ms-2 mb-0">Specialization</p>
+                                <input type="text" placeholder="Specialization">
+                            </div>
+
+                            <div class="field col-6">
+                                <p class="text-start ms-2 mb-0">Gender</p>
+                                <select type="text" placeholder="Gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="field ">
+                            <p class="text-start ms-2 mb-0">Availability </p>
+                            <input type="text" placeholder="Address">
+                        </div>
+                        <div class="field ">
+                            <p class="text-start ms-2 mb-0">Contact </p>
+                            <input type="text" placeholder="Contact">
+                        </div>
+                
+
+                    </form>
+                    <button class="ui button primary my-4 col-4">Register</button>
+
+                </div>
             </div>
 
 
+            <div class="col-12 col-lg-6">
+                <div class="table-inner p-2 text-center">
+                    <h3>Doctor List </h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ratione maiores, 
+                        architecto iste repudiandae est, similique sed eligendi aperiam rerum at? 
+                        Labore est non obcaecati exercitationem minus expedita similique earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex officia beatae, necessitatibus accusantium nostrum laudantium magni corporis pariatur, quisquam consequuntur a. Perferendis, autem repellendus eos doloribus quo quaerat dolorem assumenda,
+                        sapiente exercitationem unde vero? Architecto deleniti eveniet ullam dolor quasi! </p>
 
-            <div class="form-container">
-                <h3>Register New Doctor</h3>
-                <form id="doctor-registration-form">
-                    <label for="doctor-name">Name:</label>
-                    <input type="text" id="doctor-name" required>
 
-                    <label for="doctor-specialization">Specialization:</label>
-                    <input type="text" id="doctor-specialization" required>
 
-                    <label for="doctor-contact">Contact Information:</label>
-                    <input type="text" id="doctor-contact" required>
-
-                    <label for="doctor-availability">Availability:</label>
-                    <input type="text" id="doctor-availability" required>
-
-                    <button type="submit">Register</button>
-                </form>
+                </div>
             </div>
-    </section>
 
-</main>
-<footer class="footer">
-    <p>&copy; 2023 Hospital Management System</p>
-</footer>
+        </div>
+
+        
+    </div> 
+</div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Hospital Management System</p>
+    </footer>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../Semantic-UI-CSS-master/semantic.min.js"></script>
 
-<script type="script" src="../script/doctorRegistration.js"></script>
 </body>
+
 </html>

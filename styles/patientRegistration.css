@@ -8,89 +8,43 @@ body {
     background-color: #f0f0f0;
 }
 
-header {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+.navbar{
+    background: #007BFF;
 }
-.main-text{
-    margin-bottom: 20px;
+.navbar-nav{
+    align-items: center;
 }
-
-nav ul {
-    list-style-type: none;
-}
-
-nav li {
-    display: inline;
-    margin-right: 40px;
-}
-nav li a {
+.navbar-nav .nav-item .nav-link{
     color: white;
-    text-decoration: none;
     transition: 2s;
-    font-weight: bold;
+
 }
-nav li a:hover{
+.navbar-nav .nav-item .nav-link:hover{
     color: black;
 }
 
-main {
+.boder{
+    border: red solid 1px;
+}
+/* ===================================================== */
+.container{
     padding: 20px;
-    background: black;
 }
-
-section {
-    margin-bottom: 30px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-    margin-bottom: 10px;
-
-}
-
-.form-container {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input, form select, form textarea {
+.form-inner,.table-inner{
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    height: auto;
+    box-shadow: -4px -3px 11px 8px rgba(153,150,150,0.2);
+    -webkit-box-shadow: -4px -3px 11px 8px rgba(153,150,150,0.2);
+    -moz-box-shadow: -4px -3px 11px 8px rgba(153,150,150,0.2);
+}
+.history-input{
+    height: 100px;
 }
 
-form button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/* ===================================================== */
 
-.patient-list {
-    margin-top: 20px;
-}
 
-.patient-list h3 {
-    color: #007BFF;
-}
+
 
 .footer{
     width: 100%;
@@ -98,7 +52,14 @@ form button {
     background: #007BFF;
     display:inline-flex;
     justify-content: center;
+    align-items: center;
 }
 .footer p{
     margin-top: 40px;
+}
+@media only screen and (max-width: 992px){
+    .container.text-cente{
+       background-color: black;
+        height: 100vh;
+    }
 }
