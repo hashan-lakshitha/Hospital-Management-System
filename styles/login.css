@@ -14,8 +14,6 @@
 .main-inner{
     background-color: #55efc4;
     box-shadow: -2px 3px 20px 6px rgba(0,0,0,0.75);
--webkit-box-shadow: -2px 3px 20px 6px rgba(0,0,0,0.75);
--moz-box-shadow: -2px 3px 20px 6px rgba(0,0,0,0.75);
 }
 
 .inner-left{
